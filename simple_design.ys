@@ -1,0 +1,29 @@
+
+
+read_verilog simple_design.v
+write_ilang simple_design.0.read_verilog.il
+show -format svg -prefix simple_design.0.read_verilog simple_design
+
+read_verilog -lib -D_ABC +/ice40/cells_sim.v
+write_ilang simple_design.1.begin.0.cells_sim.il
+
+hierarchy -check -auto-top -purge_lib
+write_ilang simple_design.1.begin.1.hier.il
+show -format svg -prefix simple_design.1.begin.1.hier simple_design
+
+proc
+write_ilang simple_design.1.begin.1.proc.il
+show -format svg -prefix simple_design.1.begin.1.proc simple_design
+
+flatten
+write_ilang simple_design.2.flatten.0.flatten.il
+show -format svg -prefix simple_design.2.flatten.0.flatten simple_design
+
+tribuf -logic
+write_ilang simple_design.2.flatten.1.tribuf.il
+show -format svg -prefix simple_design.2.flatten.1.tribuf simple_design
+
+deminout
+write_ilang simple_design.2.flatten.2.deminout.il
+show -format svg -prefix simple_design.2.flatten.2.deminout simple_design
+
