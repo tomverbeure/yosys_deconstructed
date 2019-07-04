@@ -84,8 +84,6 @@ module \my_design
   attribute \src "my_design.v:51"
   wire \sb_in_from_pad
   attribute \src "my_design.v:56"
-  wire \sb_internal
-  attribute \src "my_design.v:58"
   wire \sb_internal0
   attribute \src "my_design.v:58"
   wire \sb_internal1
@@ -146,7 +144,7 @@ module \my_design
   cell \SB_DFF \u_sb_in2sb_internal0
     connect \C \clk
     connect \D \sb_in_from_pad
-    connect \Q \sb_internal
+    connect \Q \sb_internal0
   end
   attribute \module_not_derived 1
   attribute \src "my_design.v:58"

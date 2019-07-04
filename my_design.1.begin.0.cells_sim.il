@@ -1305,8 +1305,6 @@ module \my_design
   attribute \src "my_design.v:51"
   wire \sb_in_from_pad
   attribute \src "my_design.v:56"
-  wire \sb_internal
-  attribute \src "my_design.v:58"
   wire \sb_internal0
   attribute \src "my_design.v:58"
   wire \sb_internal1
@@ -1354,7 +1352,7 @@ module \my_design
   attribute \module_not_derived 1
   attribute \src "my_design.v:56"
   cell \SB_DFF \u_sb_in2sb_internal0
-    connect $1 \sb_internal
+    connect $1 \sb_internal0
     connect $2 \clk
     connect $3 \sb_in_from_pad
   end

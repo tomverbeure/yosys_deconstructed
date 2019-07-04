@@ -53,7 +53,7 @@ module my_design(clk, reset_, a, b, z, sb_in, sb_out, sb_out_z);
 	);
 
 
-	SB_DFF u_sb_in2sb_internal0 (sb_internal, clk, sb_in_from_pad);
+	SB_DFF u_sb_in2sb_internal0 (sb_internal0, clk, sb_in_from_pad);
 
 	sub_design u_sb_internal02sb_internal1(clk, sb_internal0, sb_internal1);
 
