@@ -1,0 +1,23 @@
+
+
+read_verilog my_design.v
+write_ilang my_design.0.read_verilog.il
+
+read_verilog -lib -D_ABC +/ice40/cells_sim.v
+write_ilang my_design.1.begin.0.cells_sim.il
+
+hierarchy -check -auto-top -purge_lib
+write_ilang my_design.1.begin.1.hier.il
+
+proc
+write_ilang my_design.1.begin.1.proc.il
+
+flatten
+write_ilang my_design.2.flatten.0.flatten.il
+
+tribuf -logic
+write_ilang my_design.2.flatten.1.tribuf.il
+
+deminout
+write_ilang my_design.2.flatten.2.deminout.il
+

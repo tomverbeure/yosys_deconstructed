@@ -1,0 +1,14 @@
+
+read_verilog test.v
+
+delete test0
+delete test1
+
+write_ilang test2.raw.il
+proc_arst
+write_ilang test2.arst.il
+write_verilog test2.arst.v
+
+memory_dff
+
+write_ilang test2.bram.il

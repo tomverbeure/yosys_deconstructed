@@ -1,0 +1,21 @@
+
+read_verilog test.v
+
+delete test0
+delete test2
+
+#write_ilang test1.raw.il
+#write_verilog test1.raw.v
+#
+#proc_arst
+#write_ilang test1.arst.il
+#write_verilog test1.arst.v
+#
+#memory_dff
+#write_ilang test1.mem.il
+#write_verilog test1.mem.v
+
+synth_ice40
+
+write_verilog test1.ice40.v
+
