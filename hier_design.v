@@ -37,7 +37,7 @@ module hier_design(clk, a, z);
 	input           a;
 	output          z;
 
-    wire            i0;
+	wire            i0;
 
 	sub_design                   u_a_to_i0(clk, a, i0);
 	sub_design #(.INSERT_FF(1) ) u_i0_to_z(clk, i0, z);
