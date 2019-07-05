@@ -13,7 +13,7 @@ module add_ff_design(clk, reset_, a, b, z);
 			z <= 0;
         end
         else begin
-		    z <= a + b;
+			z <= a + b;
         end
 
 endmodule

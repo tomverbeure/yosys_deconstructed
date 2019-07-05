@@ -20,7 +20,7 @@ module tribuf_design(clk, en_a, a, en_b, b, z0, z1, z2);
     always @(posedge clk) 
         z1 <= bus; 
 
-    assign z2 = a;
+    assign z2 = en_a ? a : 1'bz;
 
 endmodule
 
