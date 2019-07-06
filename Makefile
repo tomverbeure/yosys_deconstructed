@@ -1,11 +1,12 @@
 
 DESIGNS = \
+	add_const_design \
 	sb_io_pads_design \
 	tribuf_design \
 	hier_design \
 	redundant_ffs_design \
 	add_ff_design \
-	simple_design \
+	simple_design
 
 all: $(DESIGNS)
 
@@ -52,4 +53,11 @@ sb_io_pads_design: sb_io_pads_design.ys
 
 sb_io_pads_design.ys: create_ys.rb
 	./create_ys.rb sb_io_pads_design > $@
+
+
+add_const_design: add_const_design.ys
+	yosys -s add_const_design.ys
+
+add_const_design.ys: create_ys.rb
+	./create_ys.rb add_const_design > $@
 
