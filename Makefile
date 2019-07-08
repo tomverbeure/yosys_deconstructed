@@ -1,5 +1,7 @@
 
 DESIGNS = \
+	error_design \
+	check_fails_design \
 	add_const_design \
 	sb_io_pads_design \
 	tribuf_design \
@@ -60,4 +62,18 @@ add_const_design: add_const_design.ys
 
 add_const_design.ys: create_ys.rb
 	./create_ys.rb add_const_design > $@
+
+
+check_fails_design: check_fails_design.ys
+	yosys -s check_fails_design.ys
+
+check_fails_design.ys: create_ys.rb
+	./create_ys.rb check_fails_design > $@
+
+
+error_design: error_design.ys
+	yosys -s error_design.ys
+
+error_design.ys: create_ys.rb
+	./create_ys.rb error_design > $@
 
