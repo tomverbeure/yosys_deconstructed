@@ -13,7 +13,7 @@ DESIGNS = \
 all: $(DESIGNS)
 
 clean:
-	rm -fr *.il *.dot *.svg *.ys
+	rm -fr *.il *.dot *.svg *.ys *.log
 
 simple_design: simple_design.ys
 	yosys -s simple_design.ys
@@ -65,7 +65,7 @@ add_const_design.ys: create_ys.rb
 
 
 check_fails_design: check_fails_design.ys
-	yosys -s check_fails_design.ys
+	yosys -s check_fails_design.ys -l check_fails_design.log
 
 check_fails_design.ys: create_ys.rb
 	./create_ys.rb check_fails_design > $@
