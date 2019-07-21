@@ -1,5 +1,6 @@
 
 DESIGNS = \
+	merge_design \
 	error_design \
 	check_fails_design \
 	add_const_design \
@@ -69,6 +70,12 @@ check_fails_design: check_fails_design.ys
 
 check_fails_design.ys: create_ys.rb
 	./create_ys.rb check_fails_design > $@
+
+merge_design: merge_design.ys
+	yosys -s merge_design.ys
+
+merge_design.ys: create_ys.rb
+	./create_ys.rb merge_design > $@
 
 
 error_design: error_design.ys

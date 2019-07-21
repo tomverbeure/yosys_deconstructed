@@ -15,6 +15,13 @@ script = <<EOS
 	opt_expr
 	opt_clean
 	check
+    opt_expr
+    opt_merge
+    opt_muxtree
+    opt_reduce
+    opt_merge
+    opt_rmdff
+    opt_clean
 	opt
 	wreduce
 	peepopt
